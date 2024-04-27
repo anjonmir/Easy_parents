@@ -1,9 +1,14 @@
 import 'package:easy_parents/utils/routes.dart';
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   
 
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -48,14 +53,33 @@ class LoginPage extends StatelessWidget {
                 SizedBox(
                 height: 40.0,
               ),
-                  ElevatedButton(
-                    child: Text("login"),
-                    
-                    style: TextButton.styleFrom(maximumSize: Size(150, 40)),
-                    onPressed: () {
-                    Navigator.pushNamed(context, MyRouts.homeRoute);
-                    } ,
-                  )
+
+
+                    InkWell(
+                      onTap: () {
+                         Navigator.pushNamed(context, MyRouts.homeRoute);
+                      },
+                      child: Container(
+                        width: 150,
+                        height: 40,
+                       
+                        alignment: Alignment.center,
+                        child: Text("Login",
+                        style: TextStyle(
+                          color: Color.fromRGBO(255, 255, 255, 1),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20
+                        ),
+                        ),
+                        decoration: BoxDecoration(
+                           color: Color.fromRGBO(131, 8, 245, 0.612),
+                          borderRadius: BorderRadius.circular(8)
+                        ),
+                        
+                      
+                                ),
+                    ),
+
                   ],
                 ),
               )
