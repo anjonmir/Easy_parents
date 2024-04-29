@@ -1,3 +1,4 @@
+import 'package:easy_parents/widgets/drawer.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -14,7 +15,9 @@ class HomePage extends StatelessWidget {
         body: Center(
           child: Text("Our easy parent apps"),
         ),
-        drawer: Drawer(),
+        drawer: MyDrawer(
+
+        ),
       ),
     );
   }
