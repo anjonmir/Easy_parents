@@ -2,6 +2,7 @@
 
 import 'package:easy_parents/pages/home_page.dart';
 import 'package:easy_parents/pages/login_page.dart';
+import 'package:easy_parents/pages/splashscreen.dart';
 import 'package:easy_parents/utils/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -29,8 +30,12 @@ class MyApp extends StatelessWidget {
         "/": (context)=> LoginPage(),
         MyRouts.homeRoute: (context)=> HomePage(),
        MyRouts.loginRoute:(context)=> LoginPage(),
+       MyRouts.SplashRoute:(context) => SplashScreen(),
 
       },
     );
   }
 }
+
+
+
