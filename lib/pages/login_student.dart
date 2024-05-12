@@ -44,7 +44,7 @@ class _LoginPageState extends State<LoginStudent> {
                     SizedBox(height: 10),
                     InkWell(
                       onTap: () {
-                        Navigator.pushNamed(context, MyRoutes.splashRoute);
+                        Navigator.pushNamed(context, MyRoutes.registerRoute);
                       },
                       child: Container(
                         width: 200,
@@ -68,9 +68,7 @@ class _LoginPageState extends State<LoginStudent> {
                 ),
               ),
             ),
-            SizedBox(
-              height: 20.0,
-            ),
+           
             Padding(
               padding: const EdgeInsets.fromLTRB(40, 180, 40, 10),
               child: Container(
@@ -208,8 +206,15 @@ class _LoginPageState extends State<LoginStudent> {
                               decoration: InputDecoration(
                                 hintText: "Enter User Name",
                                 labelText: "UserName",
-                                labelStyle: TextStyle(color: const Color.fromARGB(255, 250, 255, 250)),
-                                hintStyle: TextStyle(color: const Color.fromARGB(255, 255, 255, 255)),
+                               
+                                border: OutlineInputBorder(
+                                borderSide: BorderSide(color: Colors.black),
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              prefixIcon: Icon(Icons.person),
+                              suffixIcon: Icon(Icons.clear),
+                              filled: true,
+                              fillColor: Colors.grey[200],
                               ),
                               validator: (value) {
                                 if (value!.isEmpty) {
@@ -219,13 +224,21 @@ class _LoginPageState extends State<LoginStudent> {
                                 }
                               },
                             ),
+                             SizedBox(height: 20),
                             TextFormField(
                               obscureText: true,
                               decoration: InputDecoration(
                                 hintText: "Enter Password",
                                 labelText: "Password",
-                                labelStyle: TextStyle(color: const Color.fromARGB(255, 250, 255, 250)),
-                                hintStyle: TextStyle(color: const Color.fromARGB(255, 255, 255, 255)),
+                                
+                                border: OutlineInputBorder(
+                                borderSide: BorderSide(color: Colors.black),
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              prefixIcon: Icon(Icons.lock),
+                              suffixIcon: Icon(Icons.clear),
+                              filled: true,
+                              fillColor: Colors.grey[200],
                               ),
                               validator: (value) {
                                 if (value!.isEmpty) {
