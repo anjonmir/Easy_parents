@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:easy_parents/utils/routes.dart';
 import 'package:flutter/cupertino.dart';
 
-class LoginPage extends StatefulWidget {
+class loginAdmin extends StatefulWidget {
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<loginAdmin> createState() => _LoginPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _LoginPageState extends State<loginAdmin> {
   final _formkey = GlobalKey<FormState>();
 
   void _moveToHome(BuildContext context) {
@@ -104,7 +104,7 @@ class _LoginPageState extends State<LoginPage> {
                               height: 100,
                               alignment: Alignment.bottomCenter,
                               decoration: BoxDecoration(
-                                color: Color.fromARGB(255, 218, 214, 214),
+                                color: Color.fromARGB(255, 233, 160, 160),
                                 shape: BoxShape.circle,
                               ),
                               child: Center(
@@ -208,6 +208,8 @@ class _LoginPageState extends State<LoginPage> {
                               decoration: InputDecoration(
                                 hintText: "Enter User Name",
                                 labelText: "UserName",
+                                labelStyle: TextStyle(color: const Color.fromARGB(255, 250, 255, 250)),
+                                hintStyle: TextStyle(color: const Color.fromARGB(255, 255, 255, 255)), 
                               ),
                               validator: (value) {
                                 if (value!.isEmpty) {
@@ -222,6 +224,8 @@ class _LoginPageState extends State<LoginPage> {
                               decoration: InputDecoration(
                                 hintText: "Enter Password",
                                 labelText: "Password",
+                                labelStyle: TextStyle(color: const Color.fromARGB(255, 250, 255, 250)),
+                                hintStyle: TextStyle(color: const Color.fromARGB(255, 255, 255, 255)),
                               ),
                               validator: (value) {
                                 if (value!.isEmpty) {
@@ -237,7 +241,7 @@ class _LoginPageState extends State<LoginPage> {
                               height: 40.0,
                             ),
                             InkWell(
-                              //  onTap: () => _moveToHome(context),
+                              onTap: () => _moveToHome(context),
                               child: Container(
                                 width: 150,
                                 height: 40,

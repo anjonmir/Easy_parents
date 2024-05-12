@@ -23,7 +23,7 @@ class HomePage extends StatelessWidget {
          InkWell(
           
           onTap: () {
-            Navigator.pushNamed(context, MyRouts.SplashRoute);
+            Navigator.pushNamed(context, MyRoutes.splashRoute);
           },
 
            child: Container(
