@@ -5,11 +5,13 @@ import 'package:easy_parents/pages/login_admin.dart';
 import 'package:easy_parents/pages/login_page.dart';
 import 'package:easy_parents/pages/login_parent.dart';
 import 'package:easy_parents/pages/login_student.dart';
+import 'package:easy_parents/pages/parent_home.dart';
 import 'package:easy_parents/pages/register.dart';
 import 'package:easy_parents/pages/splashscreen.dart';
 import 'package:easy_parents/utils/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -40,6 +42,7 @@ class MyApp extends StatelessWidget {
         MyRoutes.loginParent: (context) => LoginParent(),
         MyRoutes.loginStudent: (context) => LoginStudent(),
         MyRoutes.registerRoute: (context) => Register(),
+        MyRoutes.parentHome: (context) => ParentHome(),
 
 
 

@@ -2,6 +2,7 @@ import 'package:easy_parents/widgets/drawer.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:http/http.dart' as http;
 
 class HomePage extends StatelessWidget {
   @override
@@ -22,10 +23,14 @@ class HomePage extends StatelessWidget {
                   InkWell(
                     onTap: () async {
                       const url = 'https://vu.edu.bd/';
-                      if (await canLaunch(url)) {
-                        await launch(url);
-                      } else {
-                        throw 'Could not launch $url';
+                      try {
+                        if (await canLaunch(url)) {
+                          await launch(url);
+                        } else {
+                          throw 'Could not launch $url';
+                        }
+                      } catch (e) {
+                        print('Error launching URL: $e');
                       }
                     },
                     child: Container(
@@ -62,11 +67,16 @@ class HomePage extends StatelessWidget {
                     onTap: () async {
                       const url =
                           'https://en.wikipedia.org/wiki/Rajshahi_Collegiate_School';
-                      if (await canLaunch(url)) {
-                        await launch(url);
-                      } else {
-                        throw 'Could not launch $url';
+                     try {
+                        if (await canLaunch(url)) {
+                          await launch(url);
+                        } else {
+                          throw 'Could not launch $url';
+                        }
+                      } catch (e) {
+                        print('Error launching URL: $e');
                       }
+                    
                     },
                     child: Container(
                       width: 150,
@@ -108,10 +118,14 @@ class HomePage extends StatelessWidget {
                     onTap: () async {
                       const url =
                           'https://www.sohopathi.com/shimul-memorial-north-south-school/';
-                      if (await canLaunch(url)) {
-                        await launch(url);
-                      } else {
-                        throw 'Could not launch $url';
+                      try {
+                        if (await canLaunch(url)) {
+                          await launch(url);
+                        } else {
+                          throw 'Could not launch $url';
+                        }
+                      } catch (e) {
+                        print('Error launching URL: $e');
                       }
                     },
                     child: Container(

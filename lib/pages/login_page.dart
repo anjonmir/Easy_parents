@@ -95,7 +95,7 @@ class _LoginPageState extends State<LoginPage> {
                         children: [
                           InkWell(
                             onTap: () {
-                              Navigator.pushNamed(context, MyRoutes.loginAdmin);
+                              Navigator.pushNamed(context, MyRoutes.parentHome);
                             },
                             child: Container(
                               width: 100,
