@@ -1,5 +1,6 @@
 
 
+import 'package:easy_parents/pages/admin_home.dart';
 import 'package:easy_parents/pages/home_page.dart';
 import 'package:easy_parents/pages/login_admin.dart';
 import 'package:easy_parents/pages/login_page.dart';
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
       ),
         
       
-      initialRoute: MyRoutes.splashRoute,
+      initialRoute: MyRoutes.parentHome,
        routes: {
         "/": (context)=> LoginPage(),
        
@@ -43,6 +44,7 @@ class MyApp extends StatelessWidget {
         MyRoutes.loginStudent: (context) => LoginStudent(),
         MyRoutes.registerRoute: (context) => Register(),
         MyRoutes.parentHome: (context) => ParentHome(),
+        MyRoutes.adminHome: (context) => AdminHome(),
 
 
 

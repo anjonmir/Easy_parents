@@ -140,10 +140,10 @@ class HomePage extends StatelessWidget {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Image.network(
-                              'https://scontent.fdac24-3.fna.fbcdn.net/v/t39.30808-1/385775012_837142725081326_7547008717405590601_n.jpg?stp=dst-jpg_p200x200&_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeEx7--6T85NSTat-0P50k2q-JU0hEEM3XD4lTSEQQzdcIy4Zu3wqKGTU2G4epw4RSMdUmHxNwJSTSBqPNfBPIDr&_nc_ohc=Ps3BRGGKgtIQ7kNvgFS39jK&_nc_ht=scontent.fdac24-3.fna&oh=00_AYB_i5Fo78t9g1nRf6L84UNmm7Xoro5GnO4ggGUmGbcM4Q&oe=6649C497',
-                              width: 50, // Adjust the width as needed
-                              height: 50, // Adjust the height as needed
+                           Image.asset(
+                              "assets/images/p.jpg",
+                              width: 176, // Adjust the width as needed
+                              height: 180, // Adjust the height as needed
                             ),
                             SizedBox(height: 10),
                             Text(
@@ -180,7 +180,7 @@ class HomePage extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Image.network(
-                              'https://scontent.fdac24-1.fna.fbcdn.net/v/t39.30808-6/432004314_889063879685079_1981805842416257826_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeHGfxSrUc8Tj8swJE91t5tw0WUjiT-CsXvRZSOJP4Kxe5NhTmYL6hQeDgI31GGqmR8375Be4zDUGDY7dX0DUQvG&_nc_ohc=j7Ifw2jZClsQ7kNvgEzYzrg&_nc_ht=scontent.fdac24-1.fna&oh=00_AYCfiA2yt894QZdtd96HtMQ4Y83_AptxluF06kl_un0COg&oe=6649AF90',
+                              'https://upload.wikimedia.org/wikipedia/bn/b/bb/%E0%A6%B0%E0%A6%BE%E0%A6%9C%E0%A6%B6%E0%A6%BE%E0%A6%B9%E0%A7%80_%E0%A6%B8%E0%A6%B0%E0%A6%95%E0%A6%BE%E0%A6%B0%E0%A6%BF_%E0%A6%AE%E0%A6%A1%E0%A7%87%E0%A6%B2_%E0%A6%B8%E0%A7%8D%E0%A6%95%E0%A7%81%E0%A6%B2_%E0%A6%8F%E0%A6%A8%E0%A7%8D%E0%A6%A1_%E0%A6%95%E0%A6%B2%E0%A7%87%E0%A6%9C%E0%A7%87%E0%A6%B0_%E0%A6%B2%E0%A7%8B%E0%A6%97%E0%A7%8B.png',
                               width: 50, // Adjust the width as needed
                               height: 50, // Adjust the height as needed
                             ),

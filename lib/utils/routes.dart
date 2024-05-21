@@ -8,5 +8,6 @@ class MyRoutes{
   static String loginStudent = "/student";
   static String registerRoute = "/register";
   static String parentHome = "/parentshome";
+  static String adminHome = "/adminhome";
 
 }

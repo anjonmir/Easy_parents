@@ -12,7 +12,7 @@ class _LoginPageState extends State<loginAdmin> {
 
   void _moveToHome(BuildContext context) {
     if (_formkey.currentState!.validate()) {
-      Navigator.pushNamed(context, MyRoutes.homeRoute);
+      Navigator.pushNamed(context, MyRoutes.parentHome);
     }
   }
 
