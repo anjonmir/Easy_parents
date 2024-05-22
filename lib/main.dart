@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
       ),
         
       
-      initialRoute: MyRoutes.parentHome,
+      initialRoute: MyRoutes.splashRoute,
        routes: {
         "/": (context)=> LoginPage(),
        

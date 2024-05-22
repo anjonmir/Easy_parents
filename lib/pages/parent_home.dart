@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import 'package:http/http.dart' as http;
+
 
 class ParentHome extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
@@ -46,22 +46,38 @@ class ParentHome extends StatelessWidget {
                           ),
                           leading: Icon(CupertinoIcons.group_solid),
                         ),
-                        
-
-                GridView.count(
-                shrinkWrap: true,
-                crossAxisCount: 3, // Number of columns
-                crossAxisSpacing: 50.0, // Spacing between columns
-                mainAxisSpacing: 50.0, // Spacing between rows
-                padding: EdgeInsets.all(10.0),
-                children: [
-                  _student("Raj", 'https://example.com', Color.fromARGB(255, 79, 236, 171), 100, 50),
-                  _student("Alamin", 'https://example.com', Color.fromARGB(255, 238, 108, 69), 100, 50),
-                  _student("Mahafuz", 'https://example.com', Color.fromARGB(255, 218, 214, 214), 200, 50),
-                  _student("CR(male)", 'https://example.com', Color.fromARGB(255, 238, 62, 214), 200, 50),
-                 
-                ],
-              ),
+                        Container(
+                          padding: EdgeInsets.all(5), // Padding of 5px
+                          child: Row(
+                            children: [
+                              Text(
+                                "Main Menu",
+                                textScaleFactor: 1.0,
+                                style: TextStyle(
+                                  color: Colors.black,
+                                ),
+                              ),
+                              Spacer(), // Pushes the following widgets to the right
+                              Icon(
+                                CupertinoIcons.bell_slash,
+                                color: Colors.blue,
+                              ),
+                            ],
+                          ),
+                        ),
+                        GridView.count(
+                          shrinkWrap: true,
+                          crossAxisCount: 3, // Number of columns
+                          crossAxisSpacing: 50.0, // Spacing between columns
+                          mainAxisSpacing: 50.0, // Spacing between rows
+                          padding: EdgeInsets.all(10.0),
+                          children: [
+                            _student("Raj", 'https://example.com', Color.fromARGB(255, 79, 236, 171), 100, 50),
+                            _student("Alamin", 'https://example.com', Color.fromARGB(255, 238, 108, 69), 100, 50),
+                            _student("Mahafuz", 'https://example.com', Color.fromARGB(255, 218, 214, 214), 200, 50),
+                            _student("CR(male)", 'https://example.com', Color.fromARGB(255, 238, 62, 214), 200, 50),
+                          ],
+                        ),
                       ],
                     ),
                   ),
@@ -92,7 +108,7 @@ class ParentHome extends StatelessWidget {
     );
   }
 
-    Widget _student(String title, String url, Color color, double width, double height) {
+  Widget _student(String title, String url, Color color, double width, double height) {
     return InkWell(
       onTap: () async {
         final uri = Uri.parse(url);
@@ -133,8 +149,6 @@ class ParentHome extends StatelessWidget {
       ),
     );
   }
-
-
 
   Widget _buildGridItem(String title, String url, Color color, double width, double height) {
     return InkWell(
