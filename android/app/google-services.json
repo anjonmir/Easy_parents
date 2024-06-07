@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "1017721735140",
+    "firebase_url": "https://easy-parents-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "easy-parents",
+    "storage_bucket": "easy-parents.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1017721735140:android:ee17a787b10f3b1e6ba9f1",
+        "android_client_info": {
+          "package_name": "com.anjon.Easy_parent"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABw1zHpT5nsFG491QY830rV18ByCMfQPY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

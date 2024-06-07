@@ -1,6 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:easy_parents/utils/routes.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:easy_parents/utils/routes.dart';
+import 'package:easy_parents/pages/auth_service.dart';
 
 class loginAdmin extends StatefulWidget {
   @override
@@ -8,11 +10,24 @@ class loginAdmin extends StatefulWidget {
 }
 
 class _LoginPageState extends State<loginAdmin> {
-  final _formkey = GlobalKey<FormState>();
+  final AuthService _authService = AuthService();
+  final _formKey = GlobalKey<FormState>();
+  final TextEditingController _usernameController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
 
-  void _moveToHome(BuildContext context) {
-    if (_formkey.currentState!.validate()) {
-      Navigator.pushNamed(context, MyRoutes.adminHome);
+  void _moveToHome(BuildContext context) async {
+    if (_formKey.currentState!.validate()) {
+      String username = _usernameController.text;
+      String password = _passwordController.text;
+
+      User? user = await _authService.signInWithEmailAndPassword(username, password);
+      if (user != null) {
+        Navigator.pushNamed(context, MyRoutes.adminHome);
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Login failed. Please check your credentials.'))
+        );
+      }
     }
   }
 
@@ -23,9 +38,7 @@ class _LoginPageState extends State<loginAdmin> {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(
-              height: 20.0,
-            ),
+            SizedBox(height: 20.0),
             Padding(
               padding: const EdgeInsets.fromLTRB(80, 80, 80, 0.0),
               child: Center(
@@ -36,9 +49,7 @@ class _LoginPageState extends State<loginAdmin> {
                       title: Text(
                         "I do not have an account yet",
                         textScaleFactor: 1.0,
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
+                        style: TextStyle(color: Colors.white),
                       ),
                     ),
                     SizedBox(height: 10),
@@ -68,7 +79,6 @@ class _LoginPageState extends State<loginAdmin> {
                 ),
               ),
             ),
-            
             Padding(
               padding: const EdgeInsets.fromLTRB(40, 180, 40, 10),
               child: Container(
@@ -76,20 +86,18 @@ class _LoginPageState extends State<loginAdmin> {
                 height: 500,
                 color: Colors.deepPurple,
                 child: Form(
-                  key: _formkey,
+                  key: _formKey,
                   child: Column(
                     children: [
-                      Text("Login as",
-                      style: TextStyle(
-                                    color: Color.fromRGBO(255, 255, 255, 1),
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 20,
-                                  ),
+                      Text(
+                        "Login as",
+                        style: TextStyle(
+                          color: Color.fromRGBO(255, 255, 255, 1),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                        ),
                       ),
-
-                      SizedBox(
-                        height: 20.0,
-                      ),
+                      SizedBox(height: 20.0),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
@@ -198,51 +206,50 @@ class _LoginPageState extends State<loginAdmin> {
                         ],
                       ),
                       Padding(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 16.0, horizontal: 32.0),
+                        padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 32.0),
                         child: Column(
                           children: [
                             TextFormField(
+                              controller: _usernameController,
                               decoration: InputDecoration(
                                 hintText: "Enter User Name",
                                 labelText: "UserName",
-                                
                                 border: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.black),
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              prefixIcon: Icon(Icons.person),
-                              suffixIcon: Icon(Icons.clear),
-                              filled: true,
-                              fillColor: Colors.grey[200],
+                                  borderSide: BorderSide(color: Colors.black),
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                prefixIcon: Icon(Icons.person),
+                                suffixIcon: Icon(Icons.clear),
+                                filled: true,
+                                fillColor: Colors.grey[200],
                               ),
                               validator: (value) {
                                 if (value!.isEmpty) {
-                                  return "Please user name can not be empty";
+                                  return "Please user name cannot be empty";
                                 } else {
                                   return null;
                                 }
                               },
                             ),
-                             SizedBox(height: 20),
+                            SizedBox(height: 20),
                             TextFormField(
+                              controller: _passwordController,
                               obscureText: true,
                               decoration: InputDecoration(
                                 hintText: "Enter Password",
                                 labelText: "Password",
-                                
                                 border: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.black),
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              prefixIcon: Icon(Icons.lock),
-                              suffixIcon: Icon(Icons.clear),
-                              filled: true,
-                              fillColor: Colors.grey[200],
+                                  borderSide: BorderSide(color: Colors.black),
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                prefixIcon: Icon(Icons.lock),
+                                suffixIcon: Icon(Icons.clear),
+                                filled: true,
+                                fillColor: Colors.grey[200],
                               ),
                               validator: (value) {
                                 if (value!.isEmpty) {
-                                  return "Password can not be empty";
+                                  return "Password cannot be empty";
                                 } else if (value.length < 4) {
                                   return "Password length must be at least 4";
                                 } else {
@@ -250,9 +257,7 @@ class _LoginPageState extends State<loginAdmin> {
                                 }
                               },
                             ),
-                            SizedBox(
-                              height: 40.0,
-                            ),
+                            SizedBox(height: 40.0),
                             InkWell(
                               onTap: () => _moveToHome(context),
                               child: Container(

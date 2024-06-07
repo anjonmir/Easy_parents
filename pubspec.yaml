@@ -10,8 +10,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  url_launcher: ^6.0.9
-  http: ^1.0.0
+  firebase_core: ^2.10.0 # Ensure this version or a compatible one
+  firebase_auth: ^4.7.0 # Ensure this version or a compatible one
+  cloud_firestore: ^4.8.0 # Ensure this version or a compatible one
+  url_launcher: ^6.1.6 # Latest stable version
+  http: ^1.1.0 # Latest stable version
   cupertino_icons: ^1.0.6
   google_fonts: ^6.2.0
 
